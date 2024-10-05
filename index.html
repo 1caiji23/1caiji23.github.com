@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS团的秘密基地</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="b.mp3" type="audio/mpeg">
+        <source src="b.mp3" type="audio/mp3">
+        您的浏览器不支持音频元素。
+    </audio>
+
+    <div id="universe">
+        <div id="stars"></div>
+        <div id="twinkling"></div>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#base" class="nav-link"><i class="fas fa-home"></i> 秘密基地</a></li>
+                <li><a href="#missions" class="nav-link"><i class="fas fa-tasks"></i> SOS任务</a></li>
+                <li><a href="#members" class="nav-link"><i class="fas fa-users"></i> 团员档案</a></li>
+                <li><a href="#artifacts" class="nav-link"><i class="fas fa-gem"></i> 神秘物品</a></li>
+                <li><a href="#join" class="nav-link"><i class="fas fa-user-plus"></i> 加入我们</a></li>
+                <li><a href="#" id="musicToggle" class="nav-link"><i class="fas fa-music"></i> 音乐开关</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="base" class="interactive-room">
+            <h1 class="glow">欢迎来到SOS团的秘密基地</h1>
+            <div class="room-items">
+                <a href="https://search.bilibili.com/all?keyword=%E5%87%89%E5%AE%AB%E6%98%A5%E6%97%A5&from_source=webtop_search&spm_id_from=333.1007" target="_blank" class="item" id="computer" data-tooltip="凉宫的专用电脑"><i class="fas fa-laptop"></i></a>
+                <a href="https://book.douban.com/subject/2340609/" target="_blank" class="item" id="bookshelf" data-tooltip="长门的书架"><i class="fas fa-book"></i></a>
+                <a href="https://ac.qq.com/Comic/comicInfo/id/17114" target="_blank" class="item" id="tea-set" data-tooltip="朝比奈的茶具"><i class="fas fa-mug-hot"></i></a>
+                <a href="https://www.bilibili.com/bangumi/media/md1057" target="_blank" class="item" id="board-game" data-tooltip="古泉的桌游"><i class="fas fa-dice"></i></a>
+                <a href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank" class="item" id="armband" data-tooltip="SOS团臂章"><i class="fas fa-shield-alt"></i></a>
+            </div>
+        </section>
+
+        <section id="missions">
+            <h2>当前SOS任务</h2>
+            <div class="mission-board">
+                <div class="mission-card" data-difficulty="简单">
+                    <h3><i class="fas fa-satellite"></i> 寻找UFO</h3>
+                    <p>在学校屋顶观察夜空，寻找不明飞行物</p>
+                    <button class="accept-mission">接受任务</button>
+                </div>
+                <div class="mission-card" data-difficulty="中等">
+                    <h3><i class="fas fa-clock"></i> 时间旅行调查</h3>
+                    <p>收集校园内的时间异常现象</p>
+                    <button class="accept-mission">接受任务</button>
+                </div>
+                <div class="mission-card" data-difficulty="困难">
+                    <h3><i class="fas fa-door-open"></i> 平行世界探索</h3>
+                    <p>尝试打开通往平行世界的门</p>
+                    <button class="accept-mission">接受任务</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="members">
+            <h2>SOS团员档案</h2>
+            <div class="member-profiles">
+                <div class="profile" id="haruhi">
+                    <i class="fas fa-user-circle fa-5x"></i>
+                    <h3>凉宫春日</h3>
+                    <p>团长 | 特殊能力：改变现实</p>
+                    <button class="view-details">查看详情</button>
+                </div>
+                <!-- 其他团员档案 -->
+            </div>
+        </section>
+
+        <section id="artifacts">
+            <h2>SOS团神秘物品库</h2>
+            <div class="artifact-gallery">
+                <a href="https://www.bilibili.com/video/BV1Fs411k7e6" target="_blank" class="artifact" id="mikurus-costume">
+                    <i class="fas fa-tshirt fa-3x"></i>
+                    <h3>美图女仆装</h3>
+                    <p>点击查看朝比奈的变身过程</p>
+                </a>
+                <div class="artifact" id="yukis-glasses">
+                    <i class="fas fa-glasses fa-3x"></i>
+                    <h3>长门的眼镜</h3>
+                    <p>据说戴上后可以看到数据流</p>
+                </div>
+                <!-- 更多神秘物品 -->
+            </div>
+        </section>
+
+        <section id="join">
+            <h2>加入SOS团</h2>
+            <form id="recruitment-form">
+                <input type="text" placeholder="你的名字" required>
+                <input type="email" placeholder="你的邮箱" required>
+                <select required>
+                    <option value="">你是什么类型的奇怪存在？</option>
+                    <option value="alien">外星人</option>
+                    <option value="time-traveler">时间旅行者</option>
+                    <option value="esper">超能力者</option>
+                    <option value="slider">异世界来客</option>
+                    <option value="normal">普通人（不推荐）</option>
+                </select>
+                <textarea placeholder="描述你的特殊能力" required></textarea>
+                <button type="submit" class="btn-3d">申请加入</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SOS团 | 寻找世界的奇迹与神秘</p>
+        <div class="footer-links">
+            <a href="#" id="rules"><i class="fas fa-scroll"></i> 团规</a> | 
+            <a href="#" id="activity-log"><i class="fas fa-calendar-alt"></i> 活动日志</a> | 
+            <a href="#" id="emergency-contact"><i class="fas fa-phone"></i> 紧急联系</a>
+        </div>
+    </footer>
+
+    <div id="easter-egg" class="hidden">
+        <p>恭喜你发现了春日的秘密！</p>
+    </div>
+
+    <div id="nyan-cat-container">
+        <div id="nyan-cat">
+            <div class="body"></div>
+            <div class="tail"></div>
+            <div class="legs"></div>
+        </div>
+        <div id="rainbow"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

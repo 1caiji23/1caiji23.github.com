@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #ff9800;
+    --secondary-color: #2196f3;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+/* 星空背景 */
+.stars, .twinkling, .clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    background: #000 url('path/to/stars.png') repeat top center;
+    z-index: -3;
+}
+
+.twinkling {
+    background: transparent url('path/to/twinkling.png') repeat top center;
+    z-index: -2;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    background: transparent url('path/to/clouds.png') repeat top center;
+    z-index: -1;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 0;}
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+main {
+    flex-grow: 1;
+    padding: 2em;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+/* 3D 按钮 */
+.btn-3d {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 darken(var(--primary-color), 10%);
+    transition: all 0.1s ease;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #bb86fc;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #4a148c;
+    transition: all 0.1s;
+}
+
+.btn-3d:hover {
+    background-color: lighten(var(--primary-color), 5%);
+    box-shadow: 0 3px 0 darken(var(--primary-color), 10%);
+    transform: translateY(2px);
+}
+
+.btn-3d:active {
+    box-shadow: 0 2px 0 #4a148c;
+    transform: translateY(3px);
+}
+
+/* 角色卡片 */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+}
+
+.character-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    background-color: #2f2f2f;
+    transform: scale(1.05);
+}
+
+.character-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.character-card h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 0.5em 0;
+}
+
+.character-card p {
+    text-align: center;
+    padding: 0 1em 1em;
+}
+
+/* 霓虹文字效果 */
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--primary-color), 0 0 35px var(--primary-color), 0 0 40px var(--primary-color), 0 0 50px var(--primary-color), 0 0 75px var(--primary-color);
+}
+
+/* 悬浮音乐播放器 */
+#music-player.floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.neon-button {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.neon-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .timeline-container {
+        width: 90%;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* 添加更多动画和过渡效果 */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+    color: #03dac6;
+    text-shadow: 0 0 10px #03dac6;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-color), 0 0 20px var(--primary-color), 0 0 35px var(--primary-color), 0 0 40px var(--primary-color), 0 0 50px var(--primary-color), 0 0 75px var(--primary-color);
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--secondary-color), 0 0 40px var(--secondary-color), 0 0 70px var(--secondary-color), 0 0 80px var(--secondary-color), 0 0 100px var(--secondary-color), 0 0 150px var(--secondary-color);
+    }
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 现有的样式保持不变 */
+
+/* 添加响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .timeline-container {
+        width: 90%;
+    }
+
+    .timeline-event::after {
+        left: -6px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 30px);
+    }
+}
+
+/* 外部链接图标样式 */
+.external-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.external-links a {
+    font-size: 24px;
+    color: #333;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.external-links a:hover {
+    color: #007bff;
+}
+
+/* 为哔哩哔哩图标添加自定义样式 */
+.fa-bilibili {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.fa-bilibili::before {
+    content: "B";
+}
+
+/* 角色介绍样式 */
+.character-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.character-card {
+    flex: 0 1 calc(50% - 40px);
+    margin: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.character-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.character-image.gif {
+    object-fit: contain;
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .character-card {
+        flex: 0 1 calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .character-card {
+        flex: 0 1 100%;
+    }
+}
+
+/* 在文件末尾添加以下样式 */
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-content h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.story-content p, .story-content ul {
+    color: #666;
+    line-height: 1.6;
+}
+
+.story-content ul {
+    padding-left: 20px;
+}
+
+.story-content li {
+    margin-bottom: 10px;
+}
+
+/* 在文件末尾添加以下样式 */
+#music {
+    text-align: center;
+    padding: 20px;
+}
+
+#play-pause-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mini-play-pause {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#now-playing {
+    font-size: 14px;
+}
+
+#universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#stars, #twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#stars {
+    background: #000 url('path/to/stars.png') repeat top center;
+    z-index: -2;
+}
+
+#twinkling {
+    background: transparent url('path/to/twinkling.png') repeat top center;
+    z-index: -1;
+    animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+}
+
+.item, .artifact {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.item:hover, .artifact:hover {
+    background-color: #2f2f2f;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #2f2f2f;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: #e0e0e0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item {
+    cursor: pointer;
+}
+
+#musicToggle {
+    cursor: pointer;
+}
+
+#musicToggle:hover {
+    color: #ff9900; /* 或者其他适合您设计的颜色 */
+}
+
+/* 在文件末尾添加以下样式 */
+
+#nyan-cat-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 60px;
+    z-index: 1000;
+}
+
+#nyan-cat {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    animation: nyan-float 2s infinite alternate;
+}
+
+.body {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.tail {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 20px;
+    height: 10px;
+    background-color: #999;
+    border-radius: 5px 0 0 5px;
+}
+
+.legs {
+    position: absolute;
+    bottom: -5px;
+    left: 5px;
+    width: 30px;
+    height: 5px;
+    background-color: #999;
+}
+
+#rainbow {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    animation: rainbow-grow 0.5s infinite alternate;
+}
+
+@keyframes nyan-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes rainbow-grow {
+    0% { width: 0; }
+    100% { width: 100px; }
+}
